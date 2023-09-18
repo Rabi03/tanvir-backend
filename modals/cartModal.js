@@ -38,26 +38,23 @@ const cartSchema=mongoose.Schema({
     shippingInfo:{
         address: {
             type: String,
-            
+            required: true,
         },
         city: {
             type: String,
-            
+            required: true,
+        },
+        phoneNo: {
+            type: String,
+            required: true,
+        },
+        postalCode: {
+            type: String,
+            required: true,
         },
         country: {
             type: String,
-            
-        },
-        phoneCode:{
-            type: String,
-            
-        },
-        phoneNumber: {
-            type: String,
-            
-        },
-        zipCode:{
-            type:String
+            required: true,
         }
     },
     itemsPrice:{
