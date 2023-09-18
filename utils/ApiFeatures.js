@@ -10,6 +10,11 @@ class ApiFeatures{
                 $regex:this.queryStr.keyword,
                 $options:'i'
             }
+        }:this.queryStr.category?{
+            category:{
+                $regex:this.queryStr.category,
+                $options:'i'
+            }
         }:{}
 
         this.query=this.query.find({...keyword});
