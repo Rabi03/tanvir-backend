@@ -16,7 +16,7 @@ exports.registerUser = async (req, res, next) => {
       crop: "scale",
     });
 
-    const { name, email, password,account } = req.body;
+    const { name, email, password } = req.body;
     console.log(req.body)
 
     const user = await User.findOne({ email });
@@ -34,7 +34,6 @@ exports.registerUser = async (req, res, next) => {
         name,
         email,
         password,
-        account,
         avatar: {
           public_id: result.public_id,
           url: result.secure_url,

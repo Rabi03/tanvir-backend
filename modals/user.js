@@ -22,10 +22,6 @@ const userSchema=mongoose.Schema({
         minlength:[6,"Your password must be at least 6 characters"],
         select:false,
     },
-    account:{
-        type:String,
-        required: [true,'Please enter bank account Number'],
-    },
     avatar:{
         public_id:{
             type: String,
