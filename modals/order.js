@@ -1,0 +1,115 @@
+const mongoose = require('mongoose');
+
+const orderSchema=mongoose.Schema({
+    shippingInfo:{
+        address: {
+            type: String,
+            required: true,
+        },
+        city: {
+            type: String,
+            required: true,
+        },
+        phoneNo: {
+            type: String,
+            required: true,
+        },
+        postalCode: {
+            type: String,
+            required: true,
+        },
+        country: {
+            type: String,
+            required: true,
+        }
+    },
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref:'User'
+    },
+    orderItems:[
+        {
+            name:{
+                type: String,
+                required: true,
+            },
+            quantity:{
+                type: Number,
+                required: true,
+            },
+            image:{
+                public_id:{
+                    type: String,
+                },
+                url:{
+                    type: String,
+                }
+            },
+            price:{
+                type: Number,
+                required: true,
+            },
+            product: {
+                type: mongoose.Schema.Types.ObjectId,
+                required: true,
+                ref:'Product'
+            }
+        }
+    ],
+    paymentInfo: {
+        pay_status:String,
+      cus_name:String,
+      cus_phone:String,
+      cus_email:String,
+      currency:String,
+      pay_time:Date,
+      amount:Number
+      },
+
+    paidAt: {
+        type:Date
+    },
+    itemsPrice:{
+        type: Number,
+        required: true,
+        default:0.0
+    },
+    taxPrice:{
+        type: Number,
+        required: true,
+        default:0.0
+    },
+    shippingPrice:{
+        type: Number,
+        required: true,
+        default:0.0
+    },
+    totalPrice:{
+        type: Number,
+        required: true,
+        default:0.0
+    },
+    orderStatus:{
+        type: String,
+        required: true,
+        default:'Processing'
+    },
+    deliverAt:{
+        type:Date
+    },
+    transfered:{
+        type:Boolean,
+        default:false
+    },
+    supplied:{
+        type:Boolean,
+        default:false
+    },
+    createdAt:{
+        type: Date,
+        default:Date.now
+    }
+})
+
+module.exports =mongoose.model('Order',orderSchema)
