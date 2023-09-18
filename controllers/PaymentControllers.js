@@ -27,9 +27,9 @@ exports.processPayment=async(req,res,next)=>{
             amount: totalPrice,
             tran_id:tranId,
             currency: "BDT",
-            success_url: `https://ecommerce-steel-phi.vercel.app/api/v1/payment/callback/${newOrder._id}`,
-            fail_url: `https://ecommerce-steel-phi.vercel.app/api/v1/payment/callback/${newOrder._id}`,
-            cancel_url: `https://ecommerce-steel-phi.vercel.app/api/v1/payment/callback/${newOrder._id}`,
+            success_url: `https://tanvir-backend.vercel.app/api/v1/payment/callback/${newOrder._id}`,
+            fail_url: `https://tanvir-backend.vercel.app/api/v1/payment/callback/${newOrder._id}`,
+            cancel_url: `https://tanvir-backend.vercel.app/api/v1/payment/callback/${newOrder._id}`,
             desc: "Package Bill",
             type: "json"
           }, {
