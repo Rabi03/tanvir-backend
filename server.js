@@ -28,6 +28,7 @@ require('dotenv').config()
 
 
 const app=express();
+const httpServer = require('http').createServer(app);
 app.use(cors());
 app.use("/",Stripe)
 app.use(express.json())
@@ -64,7 +65,7 @@ process.on('unhandledRejection',err=>{
     server.close(()=>process.exit(1))
 })
 
-const io = socket(server, {
+const io = socket(httpServer, {
     cors: {
       origin: "http://localhost:3000",
       credentials: true,
