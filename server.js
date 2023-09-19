@@ -4,11 +4,13 @@ const User=require('./routes/User')
 const Order=require('./routes/Order')
 const Payment=require('./routes/Payment')
 const Stripe=require("./routes/Stripe")
+const Messages=require("./routes/messages")
 const cookieParser= require('cookie-parser')
 const bodyParser= require('body-parser')
 const cloudinary=require('cloudinary')
 const fileUpload=require('express-fileupload')
 const path=require('path')
+const socket = require("socket.io");
 const morgan = require("morgan");
 const cors = require("cors");
 
@@ -42,6 +44,7 @@ app.use('/api/v1',Products)
 app.use('/api/v1',User)
 app.use('/api/v1',Order)
 app.use('/api/v1',Payment)
+app.use('/api/v1/messages',Messages)
 
 
 cloudinary.config({ 

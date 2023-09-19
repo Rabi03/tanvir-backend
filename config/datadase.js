@@ -1,6 +1,5 @@
 const mongoose=require('mongoose');
 
-console.log("MongoDb url",process.env.MONGODB)
 
 const ConnectDatabase=()=>{
     mongoose.connect(process.env.MONGODB,{

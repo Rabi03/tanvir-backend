@@ -297,6 +297,25 @@ exports.allUsers = async (req, res, next) => {
   }
 };
 
+exports.getAdmin= async (req, res, next) => {
+  try {
+    const admin = await User.findOne({role:'admin'});
+
+    res.status(200).json({
+      success: true,
+      admin,
+    });
+  } catch (error) {
+    return res.status(400).send({
+      success: false,
+      error: {
+        error: error.errors,
+      },
+    });
+  }
+};
+
+
 exports.getUserDetails = async (req, res, next) => {
   try {
     const user = await User.findById(req.params.id);
