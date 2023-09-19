@@ -14,6 +14,7 @@ router.route('/me').get(isUserAuthenticated,getCurrentUserProfile)
 router.route('/password/update').put(isUserAuthenticated,updatePassword)
 router.route('/me/update').put(isUserAuthenticated,updateProfile)
 router.route('/getAdmin').get(getAdmin)
+router.route('/allUsers').get(allUsers)
 
 router.route('/admin/users').get(isUserAuthenticated,authorizedRols("admin"),allUsers)
 router.route('/admin/user/:id')
