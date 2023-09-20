@@ -38,7 +38,7 @@ const productSchema=mongoose.Schema({
     },
     seller:{
         type:String,
-        required:[true,"Please enter seller name"],
+        
     },
     stock:{
         type:Number,

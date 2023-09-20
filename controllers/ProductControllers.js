@@ -85,6 +85,15 @@ exports.getAdminProducts=async(req, res, next) => {
     })
 }
 
+exports.getSellerProducts=async(req, res, next) => {
+    const products=await Product.find({user:req.user._id});
+
+    res.status(200).json({
+        success:true,
+        products
+    })
+}
+
 // Get Single Product
 exports.getSingleProduct=catchAsyncError(async(req,res,next)=>{
     const product=await Product.findById(req.params.id)

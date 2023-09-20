@@ -24,7 +24,7 @@ router.route('/admin/user/:id')
 
                         
 router.route('/admin/supply').post(isUserAuthenticated,authorizedRols("admin"),addSupply)
-router.route('/supply/orders').get(isUserAuthenticated,authorizedRols("supply"),getAllSupply)
-router.route('/supply/order/:id').put(isUserAuthenticated,authorizedRols("supply"),updateSupply)
+router.route('/supply/orders').get(isUserAuthenticated,authorizedRols("seller"),getAllSupply)
+router.route('/supply/order/:id').put(isUserAuthenticated,authorizedRols("seller"),updateSupply)
 
 module.exports =router;
