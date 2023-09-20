@@ -96,7 +96,7 @@ exports.getSellerProducts=async(req, res, next) => {
 
 // Get Single Product
 exports.getSingleProduct=catchAsyncError(async(req,res,next)=>{
-    const product=await Product.findById(req.params.id)
+    const product=await Product.findById(req.params.id).populate("user")
     if(!product){
         return next(new ErrorHandler('Product not found',404))
     }
