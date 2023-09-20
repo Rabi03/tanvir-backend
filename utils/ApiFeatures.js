@@ -23,6 +23,10 @@ class ApiFeatures{
         let removeKey=['limit','page','price','rating']
         removeKey.forEach(el=>delete filterKey[el])
         if(this.queryStr.name==='null') delete filterKey['name']
+        else filterKey['name']={
+                    $regex:this.queryStr.name,
+                    $options:'i'
+                }
         console.log("After filter",filterKey)
         this.query=this.query.find({...filterKey});
 
