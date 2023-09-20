@@ -31,7 +31,7 @@ class ApiFeatures{
 
     filter(){
         const filterKey={...this.queryStr};
-        let removeKey=['keyword','limit','page']
+        let removeKey=['name','limit','page']
         removeKey.forEach(el=>delete filterKey[el])
 
         let queryStr=JSON.stringify(filterKey);
