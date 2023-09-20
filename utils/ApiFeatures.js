@@ -20,7 +20,7 @@ class ApiFeatures{
         console.log(this.queryStr)
 
         const filterKey={...this.queryStr};
-        let removeKey=['limit','page','price[lte]','price[gte]','rating[gte]']
+        let removeKey=['limit','page','price','rating']
         removeKey.forEach(el=>delete filterKey[el])
         if(this.queryStr.name==='null') delete filterKey['name']
         console.log("After filter",filterKey)
