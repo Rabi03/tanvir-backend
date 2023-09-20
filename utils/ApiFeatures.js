@@ -22,7 +22,7 @@ class ApiFeatures{
         const filterKey={...this.queryStr};
         let removeKey=['limit','page','price[lte]','price[gte]','rating[gte]']
         removeKey.forEach(el=>delete filterKey[el])
-        if(this.queryStr.name===null) delete filterKey['name']
+        if(this.queryStr.name==='null') delete filterKey['name']
 
         this.query=this.query.find({...filterKey});
 
