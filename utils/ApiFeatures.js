@@ -17,7 +17,7 @@ class ApiFeatures{
             }
         }:{}
 
-        this.query=this.query.find({...keyword});
+        this.query=this.query.find({name:this.queryStr.keyword,category:this.queryStr.category});
 
         return this;
     }
