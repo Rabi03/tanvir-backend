@@ -5,17 +5,19 @@ class ApiFeatures{
     }
 
     search(){
-        const keyword=this.queryStr.keyword?{
-            name:{
-                $regex:this.queryStr.keyword,
-                $options:'i'
-            }
-        }:this.queryStr.category?{
-            category:{
-                $regex:this.queryStr.category,
-                $options:'i'
-            }
-        }:{}
+        // const keyword=this.queryStr.keyword?{
+        //     name:{
+        //         $regex:this.queryStr.keyword,
+        //         $options:'i'
+        //     }
+        // }:this.queryStr.category?{
+        //     category:{
+        //         $regex:this.queryStr.category,
+        //         $options:'i'
+        //     }
+        // }:{}
+
+        console.log(this.queryStr)
 
         const filterKey={...this.queryStr};
         let removeKey=['limit','page','price[lte]','price[gte]','rating[gte]']
