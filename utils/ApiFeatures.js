@@ -17,7 +17,12 @@ class ApiFeatures{
             }
         }:{}
 
-        this.query=this.query.find({name:this.queryStr.keyword,category:this.queryStr.category});
+        const filterKey={...this.queryStr};
+        let removeKey=['limit','page','price[lte]','price[gte]','rating[gte]']
+        removeKey.forEach(el=>delete filterKey[el])
+        if(this.queryStr.name===null) delete filterKey['name']
+
+        this.query=this.query.find({...filterKey});
 
         return this;
     }
