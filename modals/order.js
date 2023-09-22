@@ -58,13 +58,10 @@ const orderSchema=mongoose.Schema({
         }
     ],
     paymentInfo: {
-        pay_status:String,
-      cus_name:String,
-      cus_phone:String,
-      cus_email:String,
-      currency:String,
-      pay_time:Date,
-      amount:Number
+        customerId: String,
+        paymentIntentId: String,
+        payment_status:String,
+        method:String
       },
 
     paidAt: {
