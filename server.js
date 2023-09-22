@@ -66,7 +66,7 @@ process.on('unhandledRejection',err=>{
 
 const io = socket(server, {
     cors: {
-      origin: "http://localhost:3000",
+      origin: "https://tanvir-frontend.vercel.app",
       credentials: true,
     },
   });

@@ -70,15 +70,15 @@ exports.paymentCallback=async (req, res, next) => {
           amount,}
       }
       await order.save();
-      res.redirect("http://localhost:3000/success")
+      res.redirect("https://tanvir-frontend.vercel.app/success")
     }
     else if(pay_status==='Failed'){
       await Order.findByIdAndDelete(req.params.id)
-      res.redirect("http://localhost:3000/fail")
+      res.redirect("https://tanvir-frontend.vercel.app/fail")
     }
     else{
       await Order.findByIdAndDelete(req.params.id)
-      res.redirect("http://localhost:3000/cancel")
+      res.redirect("https://tanvir-frontend.vercel.app/cancel")
     }
   }
 

@@ -2,7 +2,7 @@
 
 // Devlopement CORS Configurations//
 
-const devWhitelist = ["http://localhost:3000"];
+const devWhitelist = ["https://tanvir-frontend.vercel.app"];
 
 const corsDevOptions = {
   origin: function (origin, callback) {
