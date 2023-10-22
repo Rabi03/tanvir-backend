@@ -62,7 +62,7 @@ exports.paymentCallback = async (req, res, next) => {
     if (order) {
       order.paymentInfo = {
         customerId: cus_name + " , " + cus_email + " , " + cus_phone.toString(),
-        paymentIntentId: data.payment_intent,
+        paymentIntentId: cus_email+pay_time,
         payment_status: pay_status,
         method: "amarpay"
       }
