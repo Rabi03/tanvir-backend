@@ -5,12 +5,10 @@ const productSchema=mongoose.Schema({
         type: String,
         required: [true,"Please enter product name"],
         trim: true,
-        maxlength:[100,"Product name cannot exceed 100 characters"]
     },
     price:{
         type: Number,
         required: [true,"Please enter product price"],
-        maxlength:[5,"Product price cannot exceed 5 characters"],
         default:0.0
     },
     description:{
@@ -43,7 +41,7 @@ const productSchema=mongoose.Schema({
     stock:{
         type:Number,
         required:[true,"Please enter product stock number"],
-        maxlength:[5,"Product stock cannot exceed 5 characters"]
+        maxlength:[10,"Product stock cannot exceed 5 characters"]
     },
     numberOfReviews:{
         type:Number,
