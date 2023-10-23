@@ -2,7 +2,7 @@
 
 // Devlopement CORS Configurations//
 
-const devWhitelist = ["https://online-shopping-mall.vercel.app"];
+const devWhitelist = ["https://walmart12.vercel.app"];
 
 const corsDevOptions = {
   origin: function (origin, callback) {

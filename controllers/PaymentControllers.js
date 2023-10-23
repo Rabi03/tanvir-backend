@@ -68,15 +68,15 @@ exports.paymentCallback = async (req, res, next) => {
       }
     }
     await order.save();
-    res.redirect("https://online-shopping-mall.vercel.app/success")
+    res.redirect("https://walmart12.vercel.app/success")
   }
   else if (pay_status === 'Failed') {
     await Order.findByIdAndDelete(req.params.id)
-    res.redirect("https://online-shopping-mall.vercel.app/fail")
+    res.redirect("https://walmart12.vercel.app/fail")
   }
   else {
     await Order.findByIdAndDelete(req.params.id)
-    res.redirect("https://online-shopping-mall.vercel.app/cancel")
+    res.redirect("https://walmart12.vercel.app/cancel")
   }
 }
 

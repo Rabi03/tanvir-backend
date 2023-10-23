@@ -66,7 +66,7 @@ process.on('unhandledRejection',err=>{
 
 const io = socket(server, {
     cors: {
-      origin: "https://online-shopping-mall.vercel.app",
+      origin: "https://walmart12.vercel.app",
       credentials: true,
     },
   });
