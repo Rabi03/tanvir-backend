@@ -52,8 +52,8 @@ router.post("/stripe/create-checkout-session", express.json({ type: "application
 
       }],
       customer: customer.id,
-      success_url: `https://tanvir-frontend.vercel.app/success`,
-      cancel_url: `https://tanvir-frontend.vercel.app/cancel`,
+      success_url: `https://online-shopping-mall.vercel.app/success`,
+      cancel_url: `https://online-shopping-mall.vercel.app/cancel`,
     });
 
 

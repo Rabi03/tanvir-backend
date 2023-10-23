@@ -66,7 +66,7 @@ process.on('unhandledRejection',err=>{
 
 const io = socket(server, {
     cors: {
-      origin: "https://tanvir-frontend.vercel.app",
+      origin: "https://online-shopping-mall.vercel.app",
       credentials: true,
     },
   });
