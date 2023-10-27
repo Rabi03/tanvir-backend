@@ -117,6 +117,8 @@ exports.updateOrder = async (req, res, next) => {
 
         order.orderStatus = req.body.status
         order.deliverAt = Date.now()
+        if (req.body.status === 'Delivered')
+            order.paymentInfo.payment_status = 'paid'
 
         await order.save()
 
@@ -137,7 +139,7 @@ exports.updateOrderPayInfo = async (req, res, next) => {
         const order = await Order.findById(req.params.id);
 
         order.paymentInfo.payment_status = req.body.status;
-        order.paidAt=Date.now()
+        order.paidAt = Date.now()
         await order.save()
 
         res.status(200).json({
