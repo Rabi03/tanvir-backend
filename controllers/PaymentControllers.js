@@ -50,6 +50,7 @@ exports.processPayment = async (req, res, next) => {
     sslcommer.init(data).then(data => {
       //process the response that got from sslcommerz 
       //https://developer.sslcommerz.com/doc/v4/#returned-parameters
+      console.log(data)
       res.status(200).json({ url: data.GatewayPageURL });
     });
     // const val = await axios.post(
