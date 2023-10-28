@@ -46,7 +46,7 @@ exports.processPayment = async (req, res, next) => {
       value_c: 'ref003_C',
       value_d: 'ref004_D'
     };
-    const sslcommer = new SSLCommerzPayment('walma653ca185578b1', 'walma653ca185578b1@ssl', true) //true for live default false for sandbox
+    const sslcommer = new SSLCommerzPayment('walma653ca185578b1', 'walma653ca185578b1@ssl', false) //true for live default false for sandbox
     sslcommer.init(data).then(data => {
       //process the response that got from sslcommerz 
       //https://developer.sslcommerz.com/doc/v4/#returned-parameters
