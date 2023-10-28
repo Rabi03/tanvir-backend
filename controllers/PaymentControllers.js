@@ -44,8 +44,9 @@ exports.processPayment = async (req, res, next) => {
     sslcz.init(data).then(apiResponse => {
         // Redirect the user to payment gateway
         let GatewayPageURL = apiResponse.GatewayPageURL
-        res.redirect(GatewayPageURL)
-        // res.status(200).json({ url: GatewayPageURL });
+        console.log(GatewayPageURL)
+        
+        res.status(200).json({ url: GatewayPageURL });
     });
     
     
