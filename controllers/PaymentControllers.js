@@ -88,7 +88,7 @@ exports.processPayment = async (req, res, next) => {
 
 exports.paymentCallback = async (req, res, next) => {
   // Callback data
-  // console.log(req.body);
+  console.log(req.body);
   const {
     pay_status,
     cus_name,
