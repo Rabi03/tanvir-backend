@@ -90,28 +90,26 @@ exports.paymentCallback = async (req, res, next) => {
   // Callback data
   console.log(req.body);
   const {
-    pay_status,
-    cus_name,
-    cus_phone,
-    cus_email,
-    currency,
-    pay_time,
-    amount,
+    status,
+    card_type,
+    bank_tran_id,
+    tran_id
+    
   } = req.body;
-  if (pay_status === 'Successful') {
+  if (status === 'VALID') {
     const order = await Order.findById(req.params.id);
     if (order) {
       order.paymentInfo = {
-        customerId: cus_name + " , " + cus_email + " , " + cus_phone.toString(),
-        paymentIntentId: cus_email + pay_time,
-        payment_status: pay_status,
-        method: "amarpay"
+        customerId: tran_id,
+        paymentIntentId: bank_tran_id,
+        payment_status: 'paid',
+        method: card_type
       }
     }
     await order.save();
     res.redirect("https://walmart12.vercel.app/success")
   }
-  else if (pay_status === 'Failed') {
+  else if (status === 'FAILED') {
     await Order.findByIdAndDelete(req.params.id)
     res.redirect("https://walmart12.vercel.app/fail")
   }
